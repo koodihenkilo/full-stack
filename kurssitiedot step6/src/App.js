@@ -1,5 +1,7 @@
+import { Courses } from "./Courses"; 
 const App = () => {
-  const course = {
+  const courses = [
+  {
     name: "Half Stack application development",
     id: 1,
     parts: [
@@ -18,40 +20,41 @@ const App = () => {
         exercises: 14,
         id: 3,
       },
-    ],
-  };
+      {
+        name: 'Redux',
+        exercises: 11,
+        id: 4
+      }
+    ]
+  },
+  {
+      name: 'Node.js',
+      id: 2,
+      parts: [
+        {
+          name: 'Routing',
+          exercises: 3,
+          id: 1
+        },
+        {
+          name: 'Middlewares',
+          exercises: 7,
+          id: 2
+        }
+      ]
+    }
+  ]
 
+  
   return (
     <div>
-      <Header header={Header} />
-      <Content content={Content} />
-      <Total total={Total} />
+      
+      <Courses courses={courses} />
+       
     </div>
   );
 };
 
-const Course = (props) => {
-  return (
-    <div>
-      <p>{props.Course}</p>
-    </div>
-  );
-};
 
-const Content = (props) => {
-  return (
-    <div>
-      <p>{props.parts} </p>
-    </div>
-  );
-};
-
-const Header = (props) => {
-  return <div>{props.course}</div>;
-};
-
-const Total = (props) => {
-  return <div>{props.parts}</div>;
-};
 
 export default App;
